@@ -25,7 +25,7 @@ an ordinary parameter list is assigned to (via function invocation) at run time.
 
 # 3、GopherCon 2020上的泛型报告
 
-Go语言创始3巨头之一Robert Griesemer在全球Go大会上对最新的泛型设计进行了讲解，[收听大会视频回放，请点我](https://www.bilibili.com/video/BV12h411f7Hp?from=search&seid=14650038572868709880)。目前的泛型设计是Ian Lance Taylor（Go Team的大神）联合Robert提出的。Robert在大会上直言，他是2018年才加入其中的。整个[幻灯片](slides/Typing Generic Go,GoCon 2020 Robert Griesemer.pdf)内容组织得非常有条理，由浅入深，将泛型设计中最基础的内容都覆盖到了（例如，type parameters list，type parameters declaration and usage，实例化，constrait、any constrait）。下面是我做的一些笔记：
+Go语言创始3巨头之一Robert Griesemer在全球Go大会上对最新的泛型设计进行了讲解，[收听大会视频回放，请点我](https://www.bilibili.com/video/BV12h411f7Hp?from=search&seid=14650038572868709880)。目前的泛型设计是Ian Lance Taylor（Go Team的大神）联合Robert提出的。Robert在大会上直言，他是2018年才加入其中的。整个[幻灯片](slides/Typing_Generic_Go_GoCon2020_Robert Griesemer.pdf)内容组织得非常有条理，由浅入深，将泛型设计中最基础的内容都覆盖到了（例如，type parameters list，type parameters declaration and usage，实例化，constrait、any constrait）。下面是我做的一些笔记：
 
 > 实例化
 > 1、用type argument替换掉全部签名中的type parameters。
