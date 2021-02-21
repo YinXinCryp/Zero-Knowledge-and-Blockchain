@@ -39,3 +39,19 @@ Go中的微妙知识点汇编
 > fmt.Printf("%T %v %", i, i, i == nil)    // "[]int" "[]" "false"
 
 这个知识点在《The Go Programming Language》书中有很到位的阐述。
+
+## 1.4、内置函数close的经典用法
+
+在Go应用程序中，我们可以选择关闭通道来通知其他的goroutine优雅退出。
+
+> ```
+> ch := make(chan struct{})
+> go func(){
+>    fmt.Println(<-ch) // '{}'
+> }()
+> close(ch)
+> 
+> time.Sleep(time.Second)
+> ```
+
+这里的原理在Go语言规范中就[Close](https://golang.google.cn/ref/spec#Close)的用法进行了准确的描述，关键句是“After calling `close`, and after any previously sent values have been received, <u>receive operations will return the zero value for the channel's type without blocking</u>”。接收操作会取得对应类型的零值而不会阻塞住！
