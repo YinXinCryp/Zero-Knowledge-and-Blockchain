@@ -55,3 +55,11 @@ Go中的微妙知识点汇编
 > ```
 
 这里的原理在Go语言规范中就[Close](https://golang.google.cn/ref/spec#Close)的用法进行了准确的描述，关键句是“After calling `close`, and after any previously sent values have been received, <u>receive operations will return the zero value for the channel's type without blocking</u>”。接收操作会取得对应类型的零值而不会阻塞住！
+
+# 2、Go应用排错篇
+
+## 2.1 Go应用程序“卡住”现象排查思路
+
+1、排查是否正确使用通道（例如，是否及时关闭通道，是否带缓冲），即接收端和发送端是否会阻塞住main goroutine.  
+
+2、排查是否正确使用锁，是否拿不到锁等。
